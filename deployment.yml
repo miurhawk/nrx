@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: whimsy-app
+  name: whimsy-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: whimsy-app
+  template:
+    metadata:
+      labels:
+        app: whimsy-app
+    spec:
+      containers:
+        - name: whimsy
+          image: docker.io/miurhawk/whimsy:VERSION
+          ports:
+            - containerPort: 80

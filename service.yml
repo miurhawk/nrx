@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: whimsy-svc
+  resourceVersion: "62442"
+spec:
+  clusterIP: 10.3.241.117
+  selector:
+    app: whimsy-app
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
